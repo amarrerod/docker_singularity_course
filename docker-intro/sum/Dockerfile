@@ -1,4 +1,5 @@
-FROM <EXISTING IMAGE>
-RUN <INSTALL CMDS FROM SHELL>
-RUN <INSTALL CMDS FROM SHELL>
-CMD <CMD TO RUN BY DEFUALT>
+FROM alpine
+RUN apk add --update python3 py3-pip python3-dev
+RUN pip install cython
+COPY sum.py /home/sum.py
+CMD ["python3", "--version"]
